@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/search/StreamProcessing/storm_venv/bin/sparse", line 11, in <module>
+    sys.exit(main())
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/streamparse/cli/sparse.py", line 79, in main
+    args.func(args)
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/streamparse/cli/run.py", line 103, in main
+    env_name=args.environment, config_file=args.config)
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/streamparse/cli/run.py", line 27, in run_local_topology
+    name, topology_file = get_topology_definition(name, config_file=config_file)
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/streamparse/util.py", line 194, in get_topology_definition
+    config = get_config(config_file=config_file)
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/streamparse/util.py", line 174, in get_config
+    config = json.load(fp)
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/simplejson/__init__.py", line 461, in load
+    use_decimal=use_decimal, **kw)
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/simplejson/__init__.py", line 518, in loads
+    return _default_decoder.decode(s)
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/search/StreamProcessing/storm_venv/lib/python2.7/site-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+simplejson.errors.JSONDecodeError: Expecting value: line 26 column 35 (char 995)

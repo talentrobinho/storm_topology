@@ -1,0 +1,20 @@
+"""
+Word count topology
+"""
+
+from streamparse import Grouping, Topology
+
+from spouts.ws_ie_log_spout import WSIeLogSpout
+from spouts.ws_ie_log_reliable_spout import WSIeLogReliableSpout
+from bolts.filter_ws_log import FilterWSLogBolt
+from bolts.analysis_ws_log_clickhouse import *
+
+
+class AnalysisWSLog(Topology):
+    #ws_log_spout = WSIeLogSpout.spec(par=7)
+    ws_log_spout = WSIeLogReliableSpout.spec(par=7)
+    #ws_log_stream_bolt = FilterWSLogBolt.spec(inputs=[ws_log_spout],par=3)
+    ws_log_stream_bolt = FilterWSLogBolt.spec(inputs=[ws_log_spout['wsielog_reliable_spout']],par=3)
+    '''taobao calculate consume'''
+    tag_ws_log_bolt = TagWSLogBolt.spec(inputs=[ws_log_stream_bolt['filter_ws_log_stream']], par=26)
+

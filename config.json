@@ -1,0 +1,38 @@
+{
+    "serializer": "json",
+    "topology_specs": "topologies/",
+    "virtualenv_specs": "virtualenvs/",
+    "envs": {
+        "cc": {
+            "user": "storm",
+            "ssh_password": "123",
+            "nimbus": "nimbus.storm.adt.sogou",
+            "workers": ["supervisor01.storm.adt.sogou",
+                        "supervisor02.storm.adt.sogou",
+                        "supervisor03.storm.adt.sogou",
+                        "supervisor04.storm.adt.sogou",
+                        "supervisor05.storm.adt.sogou",
+                        "supervisor06.storm.adt.sogou",
+                        "supervisor07.storm.adt.sogou",
+                        "supervisor08.storm.adt.sogou",
+                        "supervisor09.storm.adt.sogou",
+                        "supervisor10.storm.adt.sogou",
+                        "supervisor11.storm.adt.sogou",
+                        "supervisor12.storm.adt.sogou",
+                        "supervisor13.storm.adt.sogou",
+                        "supervisor14.storm.adt.sogou",
+                        "supervisor15.storm.adt.sogou",
+                        "supervisor16.storm.adt.sogou"],
+            "log": {
+                "path": "",
+                "max_bytes": 1000000,
+                "backup_count": 10,
+                "level": "debug"
+            },
+            "virtualenv_root": "/search/odin/virenv",
+            "use_ssh_for_nimbus": true,
+            "install_virtualenv": false,
+            "virtualenv_name": "monitor_consume_search"
+        }
+    }
+}
